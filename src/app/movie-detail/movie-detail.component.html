@@ -4,7 +4,7 @@
   </ng-container>
   <ng-container *ngSwitchCase="1">
     <div class="movie__description">
-      <img
+      <img class="detail-image"
         [src]="(detailValue$ | async).posterPath"
         [alt]="(detailValue$ | async).title"
       >
