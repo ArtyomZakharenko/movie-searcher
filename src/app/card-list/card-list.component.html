@@ -1,0 +1,22 @@
+<ng-container [ngSwitch]="(status$ | async)">
+  <ng-container *ngSwitchCase="0">
+    <h1 class="header">Loading... Please Wait</h1>
+  </ng-container>
+  <ng-container *ngSwitchCase="1">
+    <h1 class="header">Popular Movies</h1>
+    <div class="card-container">
+      <app-movie-card *ngFor="let movie of (value$ | async).results"
+                      [movie]=movie>
+      </app-movie-card>
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="2">
+    <h1 class="header">Error!</h1>
+    <p>
+      {{(error$ | async).status}}
+      {{(error$ | async).message}}
+    </p>
+  </ng-container>
+</ng-container>
+
+

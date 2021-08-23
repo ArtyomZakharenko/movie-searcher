@@ -1,0 +1,71 @@
+@import "colors";
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background: $primary-color;
+  min-height: 65px;
+  z-index: 1000;
+}
+
+.navbar__button {
+  display: inline-block;
+  padding: 22px;
+  text-align: center;
+  color: $text-color;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar__button-active,
+.navbar__button:hover{
+  color: #ffffff;
+  background-color: #000000;
+  transition: .3s ease;
+}
+
+.navbar__search {
+  min-width: 30%;
+  padding: 20px;
+}
+
+.navbar-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+}
+
+@media all and (min-width: 627px) and (max-width: 1023px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar-list {
+    display: flex;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 626px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-list__item {
+    width: 100%;
+  }
+
+  .navbar__button {
+    width: 100%;
+  }
+}

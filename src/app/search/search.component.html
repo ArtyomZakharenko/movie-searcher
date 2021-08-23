@@ -1,0 +1,17 @@
+  <input
+  type="text"
+  class="search__field"
+  placeholder="Search film"
+  [(ngModel)]="query"
+
+  (keyup.enter)="this.search(query); query = ''"
+>
+<button
+  class="search__button"
+  type="submit"
+  (click)="this.search(query); query = ''"
+  [disabled]="!query"
+>
+Find
+</button>
+
